@@ -1,18 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Online Tools</h1>
+    <button v-on:click="isMinifierVisible = !isMinifierVisible">Image Minifier</button>
+    <ImageMinifier v-if="isMinifierVisible" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ImageMinifier from './components/ImageMinifier.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  }
+    ImageMinifier
+  },
+  data: () => ({
+    isMinifierVisible: false
+  })
 }
 </script>
 
